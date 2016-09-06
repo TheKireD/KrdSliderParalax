@@ -65,13 +65,17 @@
 		}
 
 		function sliderMapeiaParalax(){
-			var fator = 32;
+			var fator = sliderCalculaParalaxFator();
 
 			var inicial = 50 - Math.ceil( (slidesQuantidade * fator) / 2 );
 			for(var n = 0; n < slidesQuantidade; n++){
 				paralaxValues[n] = inicial;
 				inicial += fator;
 			}
+		}
+
+		function sliderCalculaParalaxFator(){
+			return Math.floor(100 / slidesQuantidade);
 		}
 
 		function sliderAtualizaParalax(pos){
